@@ -21,10 +21,11 @@ exports.addComment=async(req,res,next)=>{
             err.message=errors.array()[0].msg;
             return next(err);
         }
-        const {comment,userName}=req.body;
+        const {comment,userName,userEmail}=req.body;
         const newComment=new Comment({
             comment,
-            userName
+            userName,
+            userEmail
         })
         await newComment.save();
         return res.status(200).json({

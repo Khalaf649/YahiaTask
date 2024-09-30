@@ -14,4 +14,7 @@ module.exports = [
     .withMessage('The user should not be empty')
     .isLength({ min: 3, max: 255 })
     .withMessage('The user name must be between 3 and 255 characters long'),
+    body('userEmail').normalizeEmail()
+    .isEmail().withMessage('invalid email')
+    .notEmpty().withMessage('email should not be empty')
 ];

@@ -15,6 +15,11 @@ const commentSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  userEmail: {
+    type: String,
+    required: true,
+    trim: true,
+  }
 });
 
 const Comment = mongoose.model('Comment', commentSchema);
