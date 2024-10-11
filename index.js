@@ -12,11 +12,6 @@ app.use(cors());
 app.use(helmet());  
  const commentRouter=require('./Router/comments');
  app.use('/comments',commentRouter);
-app.use('/',(req,res)=>{
-    res.json({
-        msg:"test"
-    })
-})
 app.use((err,req,res,next)=>{
     const {message,statusCode}=err;
     res.status(statusCode).json({error:message});
